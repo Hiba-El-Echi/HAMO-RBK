@@ -12,6 +12,7 @@ var passport = require("passport");
 var passporLocal = require("passport-local");
 const cookieParser = require("cookie-parser");
 const session = require("express-session");
+const bill = require("./routers/bill.js");
 
 var app = express();
 
@@ -60,6 +61,8 @@ app.use("/api/categorie", categorie);
 app.use("/api/brand", brand);
 
 app.use("/api/custumer", custumer);
+
+app.use("/api/bill", bill);
 
 app.listen(8000, function () {
   console.log("listening on port 8000");
